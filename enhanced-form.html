@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enhanced HTML5 Form Example</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 1rem;
+      background: #f9f9f9;
+      color: #333;
+    }
+    header, footer {
+      background-color: #005a9c;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+    main {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 1.5rem;
+    }
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+    th, td {
+      padding: 0.5rem;
+      text-align: left;
+    }
+    ul, ol {
+      margin-bottom: 1.5rem;
+    }
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 1rem;
+      margin-bottom: 1.5rem;
+      border-radius: 5px;
+    }
+    legend {
+      font-weight: bold;
+      padding: 0 0.5rem;
+    }
+    label {
+      display: block;
+      margin-top: 0.75rem;
+      margin-bottom: 0.25rem;
+      font-weight: 600;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="number"],
+    input[type="tel"],
+    input[type="url"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      font-size: 1rem;
+    }
+    textarea {
+      resize: vertical;
+    }
+    button {
+      background-color: #005a9c;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 1rem;
+    }
+    button:hover {
+      background-color: #003f6b;
+    }
+    img, video {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Enhanced HTML5 Form Example</h1>
+    <p>Demonstrating semantic layout, lists, tables, media, and a fully featured form</p>
+  </header>
+
+  <main>
+    <section aria-labelledby="about-section">
+      <h2 id="about-section">About Our Services</h2>
+      <p>We offer a range of services tailored to your needs:</p>
+      <ul>
+        <li>Web Design and Development</li>
+        <li>SEO Optimization</li>
+        <li>Digital Marketing</li>
+        <li>Content Creation</li>
+      </ul>
+
+      <p>Our pricing plans:</p>
+      <table>
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Features</th>
+            <th>Price (per month)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Basic</td>
+            <td>5 Pages Website, Email Support</td>
+            <td>$29</td>
+          </tr>
+          <tr>
+            <td>Standard</td>
+            <td>15 Pages Website, Priority Support, SEO</td>
+            <td>$59</td>
+          </tr>
+          <tr>
+            <td>Premium</td>
+            <td>Unlimited Pages, Dedicated Manager, Marketing</td>
+            <td>$99</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <figure>
+        <img src="https://via.placeholder.com/800x300?text=Our+Team+at+Work" alt="Our team collaborating in the office" />
+        <figcaption>Our team collaborating to deliver the best results.</figcaption>
+      </figure>
+    </section>
+
+    <section aria-labelledby="contact-form-section">
+      <h2 id="contact-form-section">Contact & Registration Form</h2>
+
+      <form action="#" method="post" novalidate>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <label for="fullname">Full Name *</label>
+          <input 
+            type="text" 
+            id="fullname" 
+            name="fullname" 
+            placeholder="Enter your full name" 
+            required 
+            autocomplete="name" 
+          />
+
+          <label for="email">Email Address *</label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="example@example.com" 
+            required 
+            autocomplete="email" 
+          />
+
+          <label for="phone">Phone Number</label>
+          <input 
+            type="tel" 
+            id="phone" 
+            name="phone" 
+            placeholder="+1 555 123 4567" 
+            pattern="^\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$" 
+            autocomplete="tel"
+          />
+
+          <label for="dob">Date of Birth *</label>
+          <input 
+            type="date" 
+            id="dob" 
+            name="dob" 
+            required 
+            max="2005-12-31" 
+            aria-describedby="dobHelp"
+          />
+          <small id="dobHelp">You must be at least 18 years old.</small>
+        </fieldset>
+
+        <fieldset>
+          <legend>Account Setup</legend>
+
+          <label for="username">Username *</label>
+          <input 
+            type="text" 
+            id="username" 
+            name="username" 
+            placeholder="Choose a username" 
+            required 
+            minlength="4" 
+            maxlength="20" 
+            autocomplete="username" 
+          />
+
+          <label for="password">Password *</label>
+          <input 
+            type="password" 
+            id="password" 
+            name="password" 
+            placeholder="Enter a secure password" 
+            required 
+            minlength="8" 
+            autocomplete="new-password" 
+          />
+
+          <label for="confirm-password">Confirm Password *</label>
+          <input 
+            type="password" 
+            id="confirm-password" 
+            name="confirm-password" 
+            placeholder="Re-enter your password" 
+            required 
+            minlength="8" 
+            autocomplete="new-password" 
+          />
+
+          <label for="account-type">Account Type *</label>
+          <select id="account-type" name="account-type" required>
+            <option value="" disabled selected>Select an option</option>
+            <option value="basic">Basic</option>
+            <option value="standard">Standard</option>
+            <option value="premium">Premium</option>
+          </select>
+
+          <label for="referral-code">Referral Code (readonly)</label>
+          <input 
+            type="text" 
+            id="referral-code" 
+            name="referral-code" 
+            value="REF12345" 
+            readonly 
+          />
+        </fieldset>
+
+        <fieldset>
+          <legend>Preferences</legend>
+
+          <label for="newsletter">
+            <input 
+              type="checkbox" 
+              id="newsletter" 
+              name="newsletter" 
+              checked 
+            />
+            Subscribe to newsletter
+          </label>
+
+          <label for="contact-method">Preferred Contact Method *</label>
+          <select id="contact-method" name="contact-method" required>
+            <option value="" disabled selected>Select one</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="none">No contact</option>
+          </select>
+
+          <label for="comments">Additional Comments</label>
+          <textarea 
+            id="comments" 
+            name="comments" 
+            placeholder="Write any additional information here..." 
+            rows="4" 
+            maxlength="500"
+          ></textarea>
+        </fieldset>
+
+        <button type="submit">Submit Form</button>
+      </form>
+    </section>
+
+    <section aria-labelledby="demo-media-section">
+      <h2 id="demo-media-section">Demo Video</h2>
+      <video controls width="100%" poster="https://via.placeholder.com/800x450?text=Demo+Video+Thumbnail">
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm" type="video/webm" />
+        <source src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4" type="video/mp4" />
+        Sorry, your browser does not support the video element.
+      </video>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Enhanced Forms, Inc. All rights reserved.</p>
+  </footer>
+</body>
+</html>
